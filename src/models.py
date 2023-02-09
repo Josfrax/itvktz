@@ -4,6 +4,7 @@ This conteins the models or entities of DB.
 
 from db import db
 from typing import List
+from datetime import date
 
 
 class Institution(db.Model):
@@ -33,3 +34,17 @@ class Institution(db.Model):
         institution= db.session.query(Institution).filter_by(id=_id).first()
         db.session.delete(institution)
         db.session.commit()
+
+
+class Project(db.Model):
+    __tablename__ = "project"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+    date_start = db.Column(db.Date())
+    date_close = db.Column(db.Date())
+
+    # Functions to model
+    def fetch_all(self) -> List['Project']:
+        return db.session.query(Project).all()
+        
+            
