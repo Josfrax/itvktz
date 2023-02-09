@@ -2,7 +2,7 @@
 
 
 # ToDos
-[ ] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
+[x] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
 [ ] Crear Tabla Institucion (Nombre,descripción,dirección,fecha de creación)
 [ ] Crear Tabla Proyecto (Nombre,descripción,fecha inicio,fecha termino)
 [ ] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)

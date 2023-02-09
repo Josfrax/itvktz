@@ -3,6 +3,7 @@ __pycache__/
 
 # Enviroments
 venv/
+.env
 
 # Data Base
 docker-compose.yml
