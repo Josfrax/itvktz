@@ -48,3 +48,16 @@ class Project(db.Model):
         return db.session.query(Project).all()
         
             
+class User(db.Model):
+    __tablename__ = "user"
+    id = db.Column(db.Integer, primary_key=True)
+    rut = db.Column(db.String(9))
+    name = db.Column(db.String(80))
+    l_name = db.Column(db.String(80))
+    birthdate = db.Column(db.Date())
+    position = db.Column(db.String(80))
+    age = db.Column(db.Integer)
+
+    # Functions to model
+    def fetch_all(self) -> List['User']:
+        return db.session.query(User).all()

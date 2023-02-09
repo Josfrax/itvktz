@@ -1,5 +1,11 @@
 # Prueba técnica Kuantaz
 
+# Notes
+Una institución tiene varios proyectos 
+Un proyecto tiene un usuario responsable
+Un usuario puede tener más de un proyecto.
+Ocupar ORM de preferencia sqlalchemy.
+
 # ToDos
 [x] Crear Tabla Institucion (Nombre,descripción,dirección,fecha de creación)
 [x] Crear CRUD para Instituciones
@@ -11,8 +17,8 @@
 [x] Crear servicios para listar proyectos.
 [ ] Crear servicio para listar los proyectos que la respuesta sea el nombre del proyecto y los días que faltan para su término. 
 
-[ ] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)
-[ ] Crear servicios para listar usuarios.
+[x] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)
+[x] Crear servicios para listar usuarios.
 [ ] Crear servicio para listar un usuario (filtro por Rut) con sus respectivos proyectos.
 
 [ ] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
@@ -22,11 +28,7 @@
 [ ] Crear repositorio con acceso publico.
 
 
-# Notes
-Una institución tiene varios proyectos 
-Un proyecto tiene un usuario responsable
-Un usuario puede tener más de un proyecto.
-Ocupar ORM de preferencia sqlalchemy.
+
 
 # Source:
 - https://docs.google.com/document/d/1OKk3MvPqPiaKcejjpScQXo0iMGA5S8n1mN0r3WfqMwI/edit
