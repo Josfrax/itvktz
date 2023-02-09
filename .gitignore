@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+
+# Enviroments
+venv/
+
+# Data Base
+docker-compose.yml
