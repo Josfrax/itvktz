@@ -4,8 +4,7 @@ This conteins the models or entities of DB.
 
 from db import db
 from typing import List
-from datetime import date
-
+from utils import Daysleft
 
 class Institution(db.Model):
     __tablename__ = "institution"
@@ -46,8 +45,8 @@ class Project(db.Model):
     # Functions to model
     def fetch_all(self) -> List['Project']:
         return db.session.query(Project).all()
-        
-            
+    
+
 class User(db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)

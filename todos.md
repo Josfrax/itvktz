@@ -15,19 +15,18 @@ Ocupar ORM de preferencia sqlalchemy.
 
 [x] Crear Tabla Proyecto (Nombre,descripción,fecha inicio,fecha termino)
 [x] Crear servicios para listar proyectos.
-[ ] Crear servicio para listar los proyectos que la respuesta sea el nombre del proyecto y los días que faltan para su término. 
+[x] Crear servicio para listar los proyectos que la respuesta sea el nombre del proyecto y los días que faltan para su término. 
 
 [x] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)
 [x] Crear servicios para listar usuarios.
 [ ] Crear servicio para listar un usuario (filtro por Rut) con sus respectivos proyectos.
 
-[ ] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
-[ ] Crear documentación con Swagger.
+[x] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
+[x] Crear documentación con Swagger.
 [ ] Crear archivo Postman u otro.
 [ ] Test unitarios
-[ ] Crear repositorio con acceso publico.
-
-
+[x] Crear repositorio con acceso publico. 
+    (github)[https://github.com/Josfrax/itvktz.git]
 
 
 # Source:
