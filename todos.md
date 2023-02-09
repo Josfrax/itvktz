@@ -3,15 +3,18 @@
 
 # ToDos
 [x] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
-[ ] Crear Tabla Institucion (Nombre,descripción,dirección,fecha de creación)
-[ ] Crear Tabla Proyecto (Nombre,descripción,fecha inicio,fecha termino)
-[ ] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)
 
-[ ] Crear CRUD para Instituciones
-[ ] Crear servicio para listar instituciones donde a cada institución se agregue a la dirección la ubicación de google maps ejemplo: “https://www.google.com/maps/search/+ direccion ” y la abreviación del nombre (solo los primeros tres caracteres).
+[x] Crear Tabla Institucion (Nombre,descripción,dirección,fecha de creación)
+[x] Crear CRUD para Instituciones
 [ ] Crear servicio para listar una institución (Filtró por id) con sus respectivos proyectos y responsable del proyecto.
-[ ] Crear servicio para listar un usuario (filtro por Rut) con sus respectivos proyectos.
+[ ] Crear servicio para listar instituciones donde a cada institución se agregue a la dirección la ubicación de google maps ejemplo: “https://www.google.com/maps/search/+ direccion ” y la abreviación del nombre (solo los primeros tres caracteres).
+
+[ ] Crear Tabla Proyecto (Nombre,descripción,fecha inicio,fecha termino)
 [ ] Crear servicio para listar los proyectos que la respuesta sea el nombre del proyecto y los días que faltan para su término. 
+
+[ ] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)
+[ ] Crear servicio para listar un usuario (filtro por Rut) con sus respectivos proyectos.
+hgg
 [ ] Crear documentación con Swagger.
 [ ] Crear archivo Postman u otro.
 [ ] Test unitarios
