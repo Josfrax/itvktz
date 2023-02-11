@@ -7,11 +7,10 @@ from marshmallow import fields
 from models import Institution, Project, User
 
 """ Institution Schemas """
-class InstitutionSchema(ma.Schema):
+class InstitutionSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Institution
-        fields = ('id', 'name', 'description', 'address', 'date_created'
-        )
+        load_instance = True
 
 
 """ Project Schemas """
@@ -19,7 +18,6 @@ class ProjectSchema(ma.Schema):
     class Meta:
         model = Project
         fields = ('id', 'name', 'date_start', 'date_close', 'user_id')
-
 
 class ProjectDayLefSchema(ma.Schema):
     name = fields.String()
@@ -34,7 +32,6 @@ class UserSchema(ma.Schema):
     class Meta:
         model = User
         fields = ('id', 'rut', 'name', 'l_name', 'birthdate', 'position', 'age')
-
 
 class UserWithProjectSchema(ma.Schema): 
     id = fields.Integer()

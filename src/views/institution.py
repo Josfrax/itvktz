@@ -13,16 +13,10 @@ def create():
     institution_req_json = request.get_json()
     institution_data = institution_schema.load(institution_req_json)
     institution.create(institution_data)
-    return institution_schema.dump(institution_data),201
+    return institution_schema.dump(institution_data), 201
 
 def get_all():
-    return institution_schema.dump(institution.fetch_all(), many=True), 200
-
-def get(id:int):
-    institution_data = institution.fetch_by_id(id)
-    if institution_data:
-        return institution_schema.dump(institution_data), 200
-    return {'message': f'Item not found for id: {id}'}, 404
+    return institution_schema.dump(institution.fetch(), many=True), 200
 
 def update(id:int):
     institution_data = institution.fetch_by_id(id)
@@ -34,14 +28,19 @@ def update(id:int):
         institution_data.date_created = institution_req_json['date_created']
         institution.update(institution_data)
         return institution_schema.dump(institution_data), 200
-    return {'message': f'Item not found for id: {id}'}, 404
+    return {'success': f'Item not found for id: {id}'}, 404
 
 def delete(id:int):
     institution_data = institution.fetch_by_id(id)
     if institution_data:
         institution.delete(id)
-        return {'message': 'Item deleted successfully'}, 200
-    return {'message': f'Item not found for id: {id}'}, 404
+        return {'success': 'Item deleted successfully'}, 200
+    return {'error': f'Item not found for id: {id}'}, 404
 
+def get_by_id(id:int):
+    institution_data = institution.fetch_by_id(id)
+    if institution_data:
+        return institution_schema.dump(institution_data), 200
+    return {'error': f'Item not found for id: {id}'}, 404
 
 

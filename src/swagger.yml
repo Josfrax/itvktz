@@ -43,7 +43,7 @@ paths:
 
   /institutions/{id}: 
     get:
-      operationId: "views.institution.get"
+      operationId: "views.institution.get_by_id"
       tags:
         - "Institution"
       summary: "Details of nstitution"
