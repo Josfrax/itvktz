@@ -4,11 +4,10 @@ This conteins the models or entities of DB.
 
 from db import db
 from typing import List
-from utils import Daysleft
 
 class Institution(db.Model):
     __tablename__ = "institution"
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(80))
     description = db.Column(db.String(80))
     address = db.Column(db.String(80))
@@ -37,19 +36,23 @@ class Institution(db.Model):
 
 class Project(db.Model):
     __tablename__ = "project"
-    id = db.Column(db.Integer, primary_key=True)
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(80))
     date_start = db.Column(db.Date())
     date_close = db.Column(db.Date())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    users = db.relationship('User', backref='project', lazy=True)
 
     # Functions to model
     def fetch_all(self) -> List['Project']:
         return db.session.query(Project).all()
-    
 
+    
 class User(db.Model):
     __tablename__ = "user"
-    id = db.Column(db.Integer, primary_key=True)
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     rut = db.Column(db.String(9))
     name = db.Column(db.String(80))
     l_name = db.Column(db.String(80))
@@ -60,3 +63,14 @@ class User(db.Model):
     # Functions to model
     def fetch_all(self) -> List['User']:
         return db.session.query(User).all()
+    
+    def fetch_by_rut(self, _rut:str) -> list:
+        return db.session.query(
+                User.id,
+                db.func.concat(User.name, ' ', User.l_name).label('f_name'),
+                Project,
+            )\
+            .join(User, User.id==Project.user_id)\
+            .filter(User.rut==_rut)\
+            .all()
+        

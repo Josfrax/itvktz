@@ -138,8 +138,7 @@ paths:
       responses:
         "200":
           description: "Successfully Projects."
-
-                
+                  
   /users:
     get:
       operationId: "views.user.get_all"
@@ -153,7 +152,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Project"
+                $ref: "#/components/schemas/User"
+
+  /users/{rut}: 
+    get:
+      operationId: "views.user.get_by_rut"
+      tags:
+        - "User"
+      summary: "Details of user"
+      description: "Details of user"
+      parameters:
+        - name: rut
+          in: path
+          description: User RUT
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Successfully user."
 
 
 components:

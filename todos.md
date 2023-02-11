@@ -19,7 +19,7 @@ Ocupar ORM de preferencia sqlalchemy.
 
 [x] Crear tabla Usuario (Nombre,Apellidos,RUT,fecha de nacimiento,cargo,edad)
 [x] Crear servicios para listar usuarios.
-[ ] Crear servicio para listar un usuario (filtro por Rut) con sus respectivos proyectos.
+[X] Crear servicio para listar un usuario (filtro por Rut) con sus respectivos proyectos.
 
 [x] Crear una Api Rest con Flask y su respectiva base de datos en PostgresSql
 [x] Crear documentación con Swagger.

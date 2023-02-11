@@ -20,7 +20,4 @@ def day_left():
     for _project in projects:
         days:int = Daysleft(_project.date_close)
         pdl.append({'name': _project.name, 'dayleft': days})
-        #import pdb; pdb.set_trace()
     return project_dl_schema.dump(pdl, many=True), 200
-
-    

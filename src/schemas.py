@@ -3,30 +3,41 @@ This modules conteins the Shamas or Serializers.
 """
 
 from ma import ma
-from marshmallow import fields, Schema, post_load
+from marshmallow import fields
 from models import Institution, Project, User
 
-class InstitutionSchema(ma.SQLAlchemyAutoSchema):
+""" Institution Schemas """
+class InstitutionSchema(ma.Schema):
     class Meta:
         model = Institution
-        load_instance = True
+        fields = ('id', 'name', 'description', 'address', 'date_created'
+        )
 
 
-class ProjectSchema(ma.SQLAlchemyAutoSchema):
+""" Project Schemas """
+class ProjectSchema(ma.Schema):
     class Meta:
         model = Project
-        load_instance = True
+        fields = ('id', 'name', 'date_start', 'date_close', 'user_id')
 
 
-class UserSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = User
-        load_instance = True
-
-
-class ProjectDayLefSchema(Schema):
-    name = fields.String(required=True)
-    daysleft = fields.Integer(required=True)
+class ProjectDayLefSchema(ma.Schema):
+    name = fields.String()
+    daysleft = fields.Integer()
 
     class Meta:
         fields = ('name', 'dayleft')
+
+
+""" User Schemas """
+class UserSchema(ma.Schema):
+    class Meta:
+        model = User
+        fields = ('id', 'rut', 'name', 'l_name', 'birthdate', 'position', 'age')
+
+
+class UserWithProjectSchema(ma.Schema): 
+    id = fields.Integer()
+    f_name = fields.String()
+    Project = fields.Nested(ProjectSchema, exclude=('user_id',))
+
