@@ -39,5 +39,5 @@ class UserSchema(ma.Schema):
 class UserWithProjectSchema(ma.Schema): 
     id = fields.Integer()
     f_name = fields.String()
-    Project = fields.Nested(ProjectSchema, exclude=('user_id',))
+    projects = ma.List(fields.Nested(ProjectSchema, exclude=('user_id',)))
 

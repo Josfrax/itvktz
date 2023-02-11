@@ -12,6 +12,8 @@ class Institution(db.Model):
     description = db.Column(db.String(80))
     address = db.Column(db.String(80))
     date_created = db.Column(db.Date())
+    project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
+    projects = db.relationship('Project', backref="institution", lazy=True)
 
     # Functions to model
     def create(self, institution:dict) -> None:
@@ -65,12 +67,14 @@ class User(db.Model):
         return db.session.query(User).all()
     
     def fetch_by_rut(self, _rut:str) -> list:
-        return db.session.query(
-                User.id,
-                db.func.concat(User.name, ' ', User.l_name).label('f_name'),
-                Project,
-            )\
-            .join(User, User.id==Project.user_id)\
-            .filter(User.rut==_rut)\
-            .all()
+        user:list = db.session.query(User).filter_by(rut=_rut).first()
+        projects:list = db.session.query(Project)\
+            .filter_by(user_id=user.id).all()
         
+        return [
+            {
+                "id": user.id,
+                "f_name": f'{user.name} {user.l_name}',
+                "projects": projects
+            }
+        ]
