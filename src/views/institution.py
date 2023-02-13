@@ -4,10 +4,11 @@ This module contains functions for handling requests from institutes.
 
 from flask import request
 from models import Institution
-from schemas import InstitutionSchema
+from schemas import InstitutionSchema, InstWithProjSchema
 
 institution = Institution()
 institution_schema = InstitutionSchema()
+inst_proj_schema = InstWithProjSchema()
 
 def create():
     institution_req_json = request.get_json()
@@ -40,7 +41,9 @@ def delete(id:int):
 def get_by_id(id:int):
     institution_data = institution.fetch_by_id(id)
     if institution_data:
-        return institution_schema.dump(institution_data), 200
+        print(institution_data)
+        return inst_proj_schema.dump(institution_data, many=True), 200
     return {'error': f'Item not found for id: {id}'}, 404
+    
 
 

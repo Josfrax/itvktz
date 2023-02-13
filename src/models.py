@@ -31,18 +31,30 @@ class Institution(db.Model):
         db.session.delete(institution)
         db.session.commit()
 
-    def fetch_by_id(self, _id:int) -> 'Institution':
-        return db.session.query(Institution).filter_by(id=_id).first()
+    def fetch_by_id(self, _id:int) -> list:
+        inst:list = db.session.query(Institution).filter_by(id=_id).first()
+        projects:list = db.session.query(Project).filter_by(inst_id=_id).all()
+        return [
+            {
+                "id": inst.id,
+                "name": inst.name,
+                "projects": projects
+            }
+        ]
 
-class Project(db.Model):
+
+class Project(db.Model): 
     __tablename__ = "project"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(80))
     date_start = db.Column(db.Date())
     date_close = db.Column(db.Date())
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    users = db.relationship('User', backref='project', lazy=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    inst_id = db.Column(db.Integer, db.ForeignKey('institution.id'))
+
+    users = db.relationship('User', backref='project')
+    institutions = db.relationship('Institution', backref='project')
 
     # Functions to model
     def fetch_all(self) -> List['Project']:
