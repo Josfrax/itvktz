@@ -1,0 +1,167 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Kuantaz",
+    "dateExported": "2023-02-13T02:05:53.579Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "73a942d4-0d01-40e4-8a94-0a1f709bfe8d",
+            "name": "Institution",
+            "containerId": "",
+            "created": "2023-02-12T00:08:09.063Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ba084415-c566-4a56-8404-ff678e6f386b",
+            "name": "project",
+            "containerId": "",
+            "created": "2023-02-12T00:08:39.476Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "8ff3d1a5-605a-4306-b7d6-a16080793af9",
+            "name": "user",
+            "containerId": "",
+            "created": "2023-02-12T00:09:00.179Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "466a2f82-4a05-45c3-b70f-0f983a6e0ba8",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "73a942d4-0d01-40e4-8a94-0a1f709bfe8d",
+            "name": "api/institutions",
+            "url": "http://localhost:8000/api/institutions",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-02-10T15:05:07.263Z",
+            "modified": "2023-02-13T00:01:32.864Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"S.N. Institute\",\n  \"description\": \"Instite of waster\",\n  \"address\": \"San nicolas 22, irland, earth\",\n  \"date_created\": \"2022-10-12\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6b5bc6d7-79fe-4553-8d84-b508dcb4d1f6",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "ba084415-c566-4a56-8404-ff678e6f386b",
+            "name": "api/projects",
+            "url": "http://localhost:8000/api/projects",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-10T15:09:34.387Z",
+            "modified": "2023-02-12T02:13:58.115Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fd55c318-0ef0-4495-ac99-4f9563156b3a",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "8ff3d1a5-605a-4306-b7d6-a16080793af9",
+            "name": "api/users",
+            "url": "localhost:8000/api/users",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-10T15:17:00.921Z",
+            "modified": "2023-02-12T00:09:05.214Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0be248b0-dc2b-4fe3-a34e-a27b02b4fdc2",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "73a942d4-0d01-40e4-8a94-0a1f709bfe8d",
+            "name": "api/institutions",
+            "url": "localhost:8000/api/institutions",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-10T15:13:34.690Z",
+            "modified": "2023-02-12T00:08:21.699Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8aef2d6b-8f31-4998-a227-ee7651a6b4a6",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "ba084415-c566-4a56-8404-ff678e6f386b",
+            "name": "api/projects/daysleft",
+            "url": "localhost:8000/api/projects/dayleft",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-10T15:31:24.429Z",
+            "modified": "2023-02-12T00:08:44.424Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "744ea722-746e-497a-b4e0-589df83dbfa6",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "8ff3d1a5-605a-4306-b7d6-a16080793af9",
+            "name": "api/users/{rut}",
+            "url": "localhost:8000/api/users/123456789",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-10T17:47:57.027Z",
+            "modified": "2023-02-12T00:09:07.553Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e25eae29-5c4b-4d92-8122-7ba1fdc01e53",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "73a942d4-0d01-40e4-8a94-0a1f709bfe8d",
+            "name": "api/institutions/<id:int>",
+            "url": "localhost:8000/api/institutions/4",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-02-11T22:31:00.952Z",
+            "modified": "2023-02-12T01:53:38.290Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"address\": \"Kaka 0, El Sol\",\n    \"date_created\": \"2022-01-01\",\n    \"description\": \"Instite Seek\",\n    \"name\": \"Institu Seek\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d223373b-89d8-4479-8a8f-0e7841c70ee1",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "73a942d4-0d01-40e4-8a94-0a1f709bfe8d",
+            "name": "api/institutions/<id:int> ",
+            "url": "localhost:8000/api/institutions/5",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-02-11T23:30:33.997Z",
+            "modified": "2023-02-12T01:53:58.644Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bf691bdb-74a0-42cc-867c-89ebaec40157",
+            "colId": "04ad48b3-01cc-48e2-b2dc-3e448f326ebd",
+            "containerId": "73a942d4-0d01-40e4-8a94-0a1f709bfe8d",
+            "name": "api/institutions/<id:int>",
+            "url": "localhost:8000/api/institutions/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-02-11T23:24:23.261Z",
+            "modified": "2023-02-13T01:18:27.816Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
